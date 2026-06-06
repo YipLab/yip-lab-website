@@ -239,7 +239,17 @@ async function main() {
   merged.sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
 
   // -------------------------------------------------------
-  // 6. Write
+  // 6. Filter by minimum year
+  // -------------------------------------------------------
+  const MIN_YEAR = 1999;
+  const filtered = merged.filter((p) => p.year == null || p.year >= MIN_YEAR);
+  const skipped = merged.length - filtered.length;
+  if (skipped > 0) {
+    console.log(`Filtered out ${skipped} publications before ${MIN_YEAR}`);
+  }
+
+  // -------------------------------------------------------
+  // 7. Write
   // -------------------------------------------------------
   const output = {
     orcid: existingMeta.orcid ?? ORCID,
@@ -250,15 +260,15 @@ async function main() {
     pubmedSearchTerm: SEARCH_TERM,
     lastUpdated: new Date().toISOString(),
     error: null,
-    count: merged.length,
-    publications: merged,
+    count: filtered.length,
+    publications: filtered,
   };
 
   const outDir = resolve(rootDir, 'src/data');
   if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true });
 
   writeFileSync(dataPath, JSON.stringify(output, null, 2));
-  console.log(`\nWrote ${dataPath} (${merged.length} total publications)`);
+  console.log(`\nWrote ${dataPath} (${filtered.length} total publications)`);
 }
 
 main().catch((err) => {

@@ -22,7 +22,7 @@ function PublicationsPage() {
           Publications
         </Typography>
         <Typography variant="h5" color="text.secondary">
-          {count} publications — powered by ORCID + PubMed
+          {count} publications
         </Typography>
       </Box>
 
