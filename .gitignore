@@ -11,6 +11,9 @@
 # production
 /build
 
+# extern repos (cloned by scripts/pull_repos.mjs)
+/extern_repos
+
 # misc
 .DS_Store
 .env.local

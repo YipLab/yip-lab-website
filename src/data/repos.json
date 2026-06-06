@@ -1,0 +1,203 @@
+[
+  {
+    "id": "MultimodalHolotomography",
+    "title": "Multimodal Holotomographic Microscope",
+    "slug": "multimodal-holotomographic-microscope",
+    "repoUrl": "https://github.com/YipLab/MultimodalHolotomography",
+    "repoName": "MultimodalHolotomography",
+    "readme": "# MultimodalHolotomography\nSystem Repo for Multimodal-Multispectral Holotomographic Microscope\n\n[![DOI:10.1186/s12938-026-01577-8](https://img.shields.io/badge/DOI-10.1186/s12938-026-01577-8.svg)](https://doi.org/10.1186/s12938-026-01577-8)\n\n## About This Work\nThe first version of this system has been published.\nFull Paper: [Multimodal holotomography for volumetric monitoring of host–pathogen interactions](https://doi.org/10.1186/s12938-026-01577-8)\n\n![System Schematic](https://raw.githubusercontent.com/YipLab/MultimodalHolotomography/main/images/fig_1_sw_sp.png)\n",
+    "description": "System Repo for Multimodal-Multispectral Holotomographic Microscope",
+    "previewImage": "https://raw.githubusercontent.com/YipLab/MultimodalHolotomography/main/images/fig_1_sw_sp.png",
+    "images": [
+      "https://raw.githubusercontent.com/YipLab/MultimodalHolotomography/main/images/fig_1_sw_sp.png"
+    ],
+    "submodules": []
+  },
+  {
+    "id": "AdaptiveRoboticMicroscope",
+    "title": "Adaptive Robotic Microscope",
+    "slug": "adaptive-robotic-microscope",
+    "repoUrl": "https://github.com/YipLab/AdaptiveRoboticMicroscope",
+    "repoName": "AdaptiveRoboticMicroscope",
+    "readme": "# AdaptiveRoboticMicroscope\nSystem Repo for Adaptive Robotic Microscope\n\n![System Schematic](https://raw.githubusercontent.com/YipLab/AdaptiveRoboticMicroscope/main/images/emmsh_adv.png)\n",
+    "description": "System Repo for Adaptive Robotic Microscope",
+    "previewImage": "https://raw.githubusercontent.com/YipLab/AdaptiveRoboticMicroscope/main/images/emmsh_adv.png",
+    "images": [
+      "https://raw.githubusercontent.com/YipLab/AdaptiveRoboticMicroscope/main/images/emmsh_adv.png"
+    ],
+    "submodules": []
+  },
+  {
+    "id": "SingleObjectiveSPIM",
+    "title": "Single Objective Lightsheet Microscope",
+    "slug": "single-objective-lightsheet-microscope",
+    "repoUrl": "https://github.com/YipLab/SingleObjectiveSPIM",
+    "repoName": "SingleObjectiveSPIM",
+    "readme": "# SingleObjectiveSPIM",
+    "description": "",
+    "previewImage": "",
+    "images": [],
+    "submodules": []
+  },
+  {
+    "id": "P-DHM",
+    "title": "Portable Telecentric Digital Holographic Microscope",
+    "slug": "portable-telecentric-digital-holographic-microscope",
+    "repoUrl": "https://github.com/YipLab/P-DHM",
+    "repoName": "P-DHM",
+    "readme": "P-TDHM: Open-source portable telecentric digital holographic microscope\n================\n\nThis repository contains design file and accompanying software for the paper ***P-TDHM: Open-source portable telecentric digital holographic microscope***.\n\n[![DOI:10.1016/j.ohx.2024.e00508](https://img.shields.io/badge/DOI-10.1016/j.ohx.2024.e00508-45B727.svg)](https://doi.org/10.1016/j.ohx.2024.e00508)\n\n[![DOI:10.1016/j.ohx.2024.e00508](https://zenodo.org/badge/doi/10.1016/zenodo.8206220.svg)](https://zenodo.org/record/8206220)\n\n## About This Work\nFull Paper: [P-TDHM: Open-source portable telecentric digital holographic microscope](https://doi.org/10.1016/j.ohx.2024.e00508)\n\nSoftware installation and usage see README [here](https://github.com/YipLab/P-DHM/blob/main/Software/README.md).\n\n![Graphical Abstract](https://raw.githubusercontent.com/YipLab/P-DHM/main/images/ga1_lrg.jpg)\n\n# Core Capabilities\n- High-resolution imaging. The axial resolution of P-TDHM is not limited by conventional diffraction limit.\n- Quantitative phase imaging. P-TDHM provides quantitative phase information of the sample, which can be used to measure a sample’s refractive index and thickness.\n- Real-time imaging. Volume acquisition is limited only by the acquisition speed of the camera.\n- Long-term monitoring. Theoretically, the recording range of the T-DHM is unlimited.\n- High System Portability.\n\n\n# Authors (Yip Lab)\n**Lei Jin**, PhD Candidate @ University of Toronto\n\n**Ziyang Yu**, PhD Student @ University of Toronto\n\nhttps://github.com/deanziyangyu and [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/deanziyangyu.svg?label=Follow%20%40deanziyangyu)](https://twitter.com/deanziyangyu)\n\n**Aaron Au**, Yip Lab @ University of Toronto\n\n**Christopher Yip**, Yip Lab Supervisor\n\n[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/cyclocrossguy.svg?label=Follow%20%40cyclocrossguy)](https://twitter.com/cyclocrossguy)\n\nSee paper for the full list of Authors.\n\n\n# Find Us\n- Yip Lab GitHub: <https://github.com/YipLab>\n- Yip Lab Website: [bigten.med.utoronto.ca](bigten.med.utoronto.ca)",
+    "description": "P-TDHM: Open-source portable telecentric digital holographic microscope",
+    "previewImage": "https://raw.githubusercontent.com/YipLab/P-DHM/main/images/ga1_lrg.jpg",
+    "images": ["https://raw.githubusercontent.com/YipLab/P-DHM/main/images/ga1_lrg.jpg"],
+    "submodules": [
+      {
+        "name": "Software",
+        "title": "Software",
+        "slug": "software",
+        "readme": "DHM-Viewer\n================\n\nDHM-Viewer provide users with a graphical interface for adjusting the DHM parameters as well as viewing, processing, and saving images. The software is based on a series of extensible Standard Operation Procedures (SOPs) developed for the in-line and off-axis modes of P-TDHM.\n\n## Program Screen Shot\n| Standard Operation Procedures(SOP) |\n|----------------|\n|![Screen Shot](https://raw.githubusercontent.com/YipLab/P-DHM/main/../images/gr5.jpg)|\n\n## Processed Results\n| Quantitative Imaging (Off-axis Mode) | Long-term Biological Dynamics (Off-axis Mode) | 3D Particle Tracking (In-line Mode) |\n|----------------|----------------|----------------|\n|![off axis](https://raw.githubusercontent.com/YipLab/P-DHM/main/../images/qpi.jpg)|![off axis](https://raw.githubusercontent.com/YipLab/P-DHM/main/../images/gr14.jpg)|![in line](https://raw.githubusercontent.com/YipLab/P-DHM/main/../images/gr12.jpg)|\n\n## Software Installation and Setup\n\n### System requirements\n64-bit Windows 7 or later, macOS 10.14 or later, Ubuntu Linux 18.04 or later, with Python 3.7 or later, a monitor with 1280x800 or higher resolution, and a computer with a USB3 port.\n\n### Package Dependencies\nThe dependencies include `Matplotlib`, `NumPy`, `Pillow`, `PyQt5`, `Scikit_image`, and `Tifffile`.\n\n### Installation\n1. Download and install the latest Python3 (Version 3.7 or above) release. (3.7.13, 3.8.5, and 3.10.12 has been tested).\n2. Download and extract the package DHMViewer into the desired directory.\n3. Open a terminal in the DHMViewer directory, install the dependencies using pip command. Ran the following command:\n```bash\npip install -r./configuration.txt\n```\n\n4. Download and Install the Latest Spinnaker Full SDK from [FLIR official website](https://www.flir.ca/support-center/iis/machine-vision/downloads/spinnaker-sdk-and-firmware-download/). We tested `SpinnakerSDK_FULL_3.0.0.118_x64.exe` and `SpinnakerSDK_FULL_2.7.0.128_x64.exe`.\n\n## Intended Workflow\n1. Connect the DC power for the laser module and plug the FLIR camera’s USB cable into the computer’s USB3 port.\n2. Select the image mode (in-line or off-axis) by sliding the beam blocker to the respective positions.\n3. Launch the Spinnaker SpinView software, select camera interface and start capturing.\n4. Fine-tune the ND filters to optimize intensity of object and reference beams with the help of the GUI exposure views. The intensity ratio between object and reference beams can be 1 ~ 1.5.\n5. Place the samples on the sample holder properly and slide into the microscope body.\n6. Captures the background and hologram images with the capture software manufacturer, saving them to two separate\ndirectories.\n7. Launch the DHMViewer program, set the desired operation mode and optical parameters.\n8. Specify the locations of background and holograms files in the DHMViewer user interface.\n9. Optionally specify a Region of Interest (ROI) to be processed.\n10. Choose whether to save the processed image, respective file directory, and image types. Select the range of images to be processed.\n11. Process (and save) the images, optionally saving the current system configuration.\n12. To obtain reconstructed z-stacks for a given off-axis hologram image, repeat steps (7) to (12) and switch between the off-axis\nand in-line operation modes.\n\n## Software Operation\nLaunch the DHMViewer program by double clicking dhm_viewer.py or running the Python command in the terminal.\nRan the following command (Linux, macOS):\n```bash\npython3 dhm_viewer.py\n```\nOn Windows (py launcher):\n```bash\npy dhm_viewer.py\n```\nWhen the launcher window appears, seen in (Fig. 6a.), click on the desired mode of operation (off-axis or in-line) to switch to the appropriate SOP mode. The main window should appear (Fig. 5.). From the left side panel, click the dropdown menu to expand the details of each step, and click the red proceed button.\n\n1. Optionally load an “.ini” configuration file from the file menu to jump to step 4 ([Menu Options a](#menu-options)). If needed, click the menu items in the menu bar to switch to another DHM mode.\n2. Set the parameters matching the desired system configuration and camera sensor specification ([Fig. 8a](#sop-usage)).\n3. Specify the file location of the background and the directory locations of the hologram image(s). Enter the address by hand or use\nthe file browser by clicking the “Load” button. The background and the hologram will be loaded onto the viewer ([SOP Usage b](#sop-usage)).\n1. Optionally specify the Region of Interest. Only the content inside ROI will be processed. Click the checkbox “Edit ROI”, then follow the messages above the viewer to select ROI on screen. One can also shuffle the spin-box and click the “Update image”\nbutton at the top of the viewer to view the entire range of images to check the ROI’s relative position ([SOP Usage c](#sop-usage))\n1. Check the “save image” checkbox should the processed images need to be saved. In off-axis mode, select the image type to be saved. Select the range of images to be processed by the start and stop points by the spin-boxes. Click the “peek” button to view the selected\nstart/stop point. Should anything be saved, select a file directory ([SOP Usage d](#sop-usage)).\n1. Click the process image button to process the selected images. A progress bar, a “Pause” button, and an “End task” button should\nappear on top of the viewer. Click the respective button to pause the operation or to end the processing and go back to save settings. On the side panel, click the dropdown menu to select the viewing image type during processing; clicking the “Live save” button will save the viewer’s currently displayed content ([SOP Usage e](#sop-usage)). In in-line mode, when “Reconstructed volume” is selected as the viewing type, each slice of the reconstructed hologram can be viewed after processing and saving is complete.\n\nOnce every dropdown menu has been checked, user is able to click save the configuration to save all current settings into a “.ini” file in the desired directory ([Menu Options c](#menu-options)).\n\n#### Menu Options\n![Fig. 7][1]\n\n#### SOP Usage\n![Fig. 8][2]\n\n[1]: ../images/gr7.jpg\n[2]: ../images/gr8.jpg",
+        "description": "DHM-Viewer provide users with a graphical interface for adjusting the DHM parameters as well as viewing, processing, and saving images. The software...",
+        "images": [
+          "https://raw.githubusercontent.com/YipLab/P-DHM/main/../images/gr5.jpg",
+          "https://raw.githubusercontent.com/YipLab/P-DHM/main/../images/qpi.jpg",
+          "https://raw.githubusercontent.com/YipLab/P-DHM/main/../images/gr14.jpg",
+          "https://raw.githubusercontent.com/YipLab/P-DHM/main/../images/gr12.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "IX83-Modules",
+    "title": "IX83 Combinational TIRF Microscope",
+    "slug": "ix83-combinational-tirf-microscope",
+    "repoUrl": "https://github.com/YipLab/IX83-Modules",
+    "repoName": "IX83-Modules",
+    "readme": "# IX83-Modules\n\nModules enable different microscopy techniques to be applied on the same optical system. Modules are inserted into designated modular spaces the IX83 system. Detailed description of the modules can be found in their respective folders.\n\n\n![System Schematic](https://raw.githubusercontent.com/YipLab/IX83-Modules/master/images/schematic.png)\n\n\nThe system has 4 free spaced lasers that are aligned using a laser combiner. The beam profile can be manipulated in to modular exciation areas(Mod_Ex). The beam is then expanded and focused to the back focal plane of the objective.\n\nThere are two modular emission areas(Mod_Em), this permits image manipulation before it is acquired by the camera. Mod_Em1 is the second deck in a dual deck IX83 microscope body. The second is space between the microscope body and the camera.\n\n## Components\n\n### Lasers\n405 Laser | Coherent Cube 405 nm 25 mW  \n488 Laser | Coherent Sapphire 488 nm 200 mW  \n561 Laser | Laser Quantum GEM 561 nm 200 mW  \n647 Laser | Coherent OBIS 637 nm 160 mW  \n\n### Optics\nL1 | Achromatic Doublet f = 30 mm ([AC254-030-A-ML](https://www.thorlabs.com/thorproduct.cfm?partnumber=AC254-030-A-ML))    \nL2 | Achromatic Doublet f = 250 mm ([AC254-250-A-ML](https://www.thorlabs.com/thorproduct.cfm?partnumber=AC254-250-A-ML))  \nL3 | Achromatic Doublet f = 300 mm ([AC254-300-A-ML](https://www.thorlabs.com/thorproduct.cfm?partnumber=AC254-300-A-ML))  \nIX83 | Olympus IX83 Dual Deck\n\n### Objectives\n5x | Olympus LMPlanFLN 5x/0.13  \n10x | Olympus UPlanFl 10x/0.30  \n20x | Olympus LCPlanFl 20x/0.40  \n40x | Olympus LCPlanFl 40x/0.60  \n60x | Olympus PlanApo 60x/1.4 Oil  \n100x | Olympus UApoN 100x/1.49 Oil  \n\n### Filter Cube  \nQuad band | Chroma ([TRF89901-EMv2-OL3](https://www.chroma.com/products/sets/trf89901-emv2-et-405-488-561-640nm-laser-quad-band-set-for-tirf-applications))  \n\n### Camera\nCAM | Photometrics Prime BSI sCMOS\n\n### Software\nMicromanager 1.4\n\n## TODO:\n* software requirements\n\t*make folder\n\t*shutter code, laser control code, micromanager config\n* license\n\n",
+    "description": "Modules enable different microscopy techniques to be applied on the same optical system. Modules are inserted into designated modular spaces the IX83...",
+    "previewImage": "https://raw.githubusercontent.com/YipLab/IX83-Modules/master/images/schematic.png",
+    "images": ["https://raw.githubusercontent.com/YipLab/IX83-Modules/master/images/schematic.png"],
+    "submodules": [
+      {
+        "name": "CylindricalSMLM",
+        "title": "CylindricalSMLM",
+        "slug": "cylindricalsmlm",
+        "readme": "# Module for Motorized Cylindrical Lens for Single Molecule Localization Microscopy\n\nTraditional Single Molecule Localization Micrsocopy (SMLM) techniques have generate a 2D super-resolution image. Several tehcniques have been developed for 3D SMLM, most revolve around PSF engineering. Perhaps the most simple method to 3D SMLM is the addition of a cylindrical lens that introduces astigmatism to the PSF. \n\n\n<p align=\"center\">\n\t<img src=\"https://raw.githubusercontent.com/YipLab/IX83-Modules/master/CylindricalSMLM/images/schematic.png\" alt=\"CylindricalSMLM schematic\" width=\"50%\">\n</p>\n\n\n\nThe Motorized Cylindrical SMLM module is placed in between the camera and microscope body, Mod_Em2.  The cylindrical lens is attached to a stepper motor that actuates back and forth movement along the optical axis. By moving the cylindrical lens, we are able to tune the axial range and sensitivity of the system.\n\n## Suggested Reads\n\nB. Huang, W. Wang, M. Bates and X. Zhuang, **Three-dimensional Super-resolution Imaging by Stochastic Optical Reconstruction Microscopy**, [10.1126/science.1153529](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2633023/?report=classic)\n\nKuhlman Lab, **3D Camera Mount**, [Website](http://kuhlman.physics.illinois.edu/resources_camera_mount.html)\n",
+        "description": "Traditional Single Molecule Localization Micrsocopy (SMLM) techniques have generate a 2D super-resolution image. Several tehcniques have been...",
+        "images": [
+          "https://raw.githubusercontent.com/YipLab/IX83-Modules/master/CylindricalSMLM/images/schematic.png"
+        ]
+      },
+      {
+        "name": "DMD",
+        "title": "DMD",
+        "slug": "dmd",
+        "readme": "# Module for Digital Mirror Device\n\nThe module adds a Digital Mirror Device (DMD) into the excitation beam path. This will allow excitation patterning at the back focal plane(BFP) and the imaging plane of the objective.\n\n\n<p align=\"center\">\n\t<img src=\"https://raw.githubusercontent.com/YipLab/IX83-Modules/master/DMD/images/schematic.png\" alt=\"DMD Schematic\" width=\"30%\">\n</p>\n\n\nThese DMD rotate at a 12 degree angle (ON) or flat (OFF). Hence the incoming angle towards the DMD is 24 degrees. A pair of lenses are used to relay the image plane to the beamsplitter, which generates an image on the image plane of the objective. The second lens can be removed and the DMD image will be projected onto the BFP of the objective.\n\n## Suggested Reads\n\nA. Sandmeyer, M. Lachetta, H. Sandmeyer, W. Hubner, T. Huser and M. Muller, **DMD-based super-resolution structure illumination microsocpy visualizes live cell dynamics at high speed and low cost**, [https://doi.org/10.1101/797670](https://www.biorxiv.org/content/10.1101/797670v1.full)\n\nJL. Tang, JH. Ren and KY. Han, **Florescence imaging with tailored light**, [https://doi.org/10.1515/nanoph-2019-0227](https://www.degruyter.com/downloadpdf/journals/nanoph/8/12/article-p2111.xml)\n\n\n## TODO:\n* EXPERIMENT: New Design\n* component list\n* pattern creation scripts\n* setup\n",
+        "description": "The module adds a Digital Mirror Device (DMD) into the excitation beam path. This will allow excitation patterning at the back focal plane(BFP) and...",
+        "images": [
+          "https://raw.githubusercontent.com/YipLab/IX83-Modules/master/DMD/images/schematic.png"
+        ]
+      },
+      {
+        "name": "FAIM",
+        "title": "FAIM",
+        "slug": "faim",
+        "readme": "# Module for Fluoresence Anisotropy Imaging Microscopy\n\nThis module observes the fluoresence emission polarization. An [Optosplit II](https://www.cairn-research.co.uk/product/optosplit-ii/) was used to separate parallel and perpendicular emissions onto the camera sensor. Post processing is then used to split the image and extract ratiometric information.\n\n<p align=\"center\">\n\t<img src=\"https://raw.githubusercontent.com/YipLab/IX83-Modules/master/FAIM/images/schematic.png\" alt=\"FAIM Schematic\" width=\"50%\">\n</p>\n\n\nInside the optosplit, the emission light is split into two paths. A broadband polarized beam splitter cube (PBS) is used to separate the polarization from the emission light. Linearly polarized filters are used to further clean up the polarizations.\n\n## Component List\n\n[Optosplit II](https://www.cairn-research.co.uk/product/optosplit-ii/)  \n[Polarized Beam Splitter Cube](https://www.thorlabs.com/thorproduct.cfm?partnumber=PBS201)  \n[Linear Polarized Filters](https://www.thorlabs.com/thorproduct.cfm?partnumber=LPVISE100-A)  \n\n## Suggested Reads\nDW. Piston, MA. Rizzo, **FRET by Fluorescence Polarization**, [https://doi.org/10.1016/S0091-679X(08)85018-2](https://www.sciencedirect.com/science/article/pii/S0091679X08850182)\n\nF. Strohl, HHW. Wong, CE. Holt, CF Kaminski, **Total internal reflection anisotropy imaging microscopy: setup, calibration, and data processing for protein polymerization measurements in living cells**, [https://iopscience.iop.org/article/10.1088/2050-6120/aa872e](https://iopscience.iop.org/article/10.1088/2050-6120/aa872e)\n\n## TODO:\n* post processing scripts",
+        "description": "This module observes the fluoresence emission polarization. An Optosplit II was used to separate parallel and perpendicular emissions onto the camera...",
+        "images": [
+          "https://raw.githubusercontent.com/YipLab/IX83-Modules/master/FAIM/images/schematic.png"
+        ]
+      },
+      {
+        "name": "HyperspectralSMLM",
+        "title": "HyperspectralSMLM",
+        "slug": "hyperspectralsmlm",
+        "readme": "# Module for Hyperspectral Single Molecule Localization Microscopy\n\nSingle Molecule Localization Microscopy (SMLM) is a super-resolution technique that relies on observing individual fluorphores and identifying its sub-pixel location. In order to observe two different components within a cell, fluorophores with different emission wavelengths are used. Under TIRF illumination, the penetration depth of the evanescent field is dependant on the excitation wavelength. Acquring SMLM images using two different excitation wavelengths will generate two different images since higher wavelengths will excite deeper into the sample. Using the same laser for both fluorophores will ensure that both are excited up to the same penetration depth. The Hyperspectral SMLM module will then separate the emission from the different fluorophores.\n\n\n<p align=\"center\">\n\t<img src=\"https://raw.githubusercontent.com/YipLab/IX83-Modules/master/HyperspectralSMLM/images/schematic.png\" alt=\"Hyperspectral SMLM schematic\" width=\"70%\">\n</p>\n\n\nThe module is place in the infinity space of the microscope body, Mod_Em1. A Verschrome tunable filter was used to filter out emission light. The tunable filter permits specific wavelengths of light based on its incoming angle. The filter was attached to a galvo motor for fine adjustments to the filter angle. \n\n## More details:\nA. Vissa, M. Giuliani, PK. Kim, CM. Yip, **Hyperspectral super-resolution imaging with far-red emitting fluorophores using a thin-film tunable filter**, [https://doi.org/10.1101/756023](https://www.biorxiv.org/content/10.1101/756023v1)",
+        "description": "Single Molecule Localization Microscopy (SMLM) is a super-resolution technique that relies on observing individual fluorphores and identifying its...",
+        "images": [
+          "https://raw.githubusercontent.com/YipLab/IX83-Modules/master/HyperspectralSMLM/images/schematic.png"
+        ]
+      },
+      {
+        "name": "PolFM",
+        "title": "PolFM",
+        "slug": "polfm",
+        "readme": "# Module for Polarized Fluoresence Microscopy\n\nMost fluorophores have a preferential polarization.  Hence fluorophore orientation can be observed by exciting with parallel and perpendicular excitation in succession.  \n\n\n<p align=\"center\">\n\t<img src=\"https://raw.githubusercontent.com/YipLab/IX83-Modules/master/PolFM/images/schematic.png\" alt=\"PFM Schematic\" width=\"75%\">\n</p>\n\n\nThe PolFM module is placed in Mod_Ex1, and is designed to rotate the laser between parallel and perpendicular excitations. The laser beam travels through a 1/4 wave plate which spins the laser polarization from linear to circular polarized. Then a liquid crystal retarder is used convert the beam back to a linear polarization in either directions. \n\n## Component List\n\n[Quarter-Wave Plate](https://www.thorlabs.com/thorproduct.cfm?partnumber=AQWP05M-600)  \n[Half-Wave Liquid Crystal Wave Plate](https://www.thorlabs.com/thorproduct.cfm?partnumber=LCC1111-A)  \n[Liquid Crystal Controller](https://www.thorlabs.com/thorproduct.cfm?partnumber=LCC25)  \n[Rotational Mount](https://www.thorlabs.com/thorproduct.cfm?partnumber=RSP1#ad-image-0)x2  \n[3D Printed Mount]()\n\n## TODO:\n* control scripts\n* post processing scripts\n* 3D printed CAD file",
+        "description": "Most fluorophores have a preferential polarization. Hence fluorophore orientation can be observed by exciting with parallel and perpendicular...",
+        "images": [
+          "https://raw.githubusercontent.com/YipLab/IX83-Modules/master/PolFM/images/schematic.png"
+        ]
+      },
+      {
+        "name": "RemoteFocus",
+        "title": "RemoteFocus",
+        "slug": "remotefocus",
+        "readme": "# Module for Remote Focus\n\nTraditional focusing relies on moving the objective towards or away from the sample. Oil emmersion objective will mechanically influence the samples as focusing occurs. Remote Foucs(RF) allows for focusing away from the sample (remotely), while keeping the sample objective stationary. \n\n\n![RF Schematic](https://raw.githubusercontent.com/YipLab/IX83-Modules/master/RemoteFocus/images/schematic.png)\n\n\nThe RF module is placed in between the microscope body and camera (Mod_Em2). It consists of 2 pairs of realys. Remote focus is accomplished by moving one of the objectives along the optical axis.\n\n\n## Adapted from:\nA. Millett-Sikking, NH. Thayer, A. Bohnert, AG. York, **Remote refocus enables class-leading spatiotemporal resolution in 4D optical microscopy**, [doi:10.5281/zenodo.1146083](https://calico.github.io/remote_refocus/)\n\n## TODO:\n* component list\n* software",
+        "description": "Traditional focusing relies on moving the objective towards or away from the sample. Oil emmersion objective will mechanically influence the samples...",
+        "images": [
+          "https://raw.githubusercontent.com/YipLab/IX83-Modules/master/RemoteFocus/images/schematic.png"
+        ]
+      },
+      {
+        "name": "SAF",
+        "title": "SAF",
+        "slug": "saf",
+        "readme": "# Module for Supercritical Angle Fluorescence Measurements\n\nSupercritical Angle Fluorescence (SAF) imaging is a multipurpose technique that can be used to detect fluoresence emissions close to the cover glass surface and make inferences with regards to sample adhesion to the coverglass, refractive index changes within a cell. These observations can be made by looking at the back focal plane of the sample.\n\n\n![SAF Schematic](https://raw.githubusercontent.com/YipLab/IX83-Modules/master/SAF/images/schematic.png)\n\n\nThe SAF module is placed in the 2nd slot of the microscope body (Mod_Em1). It consists of a lens mounted on a servo motor. An arduino is used to control the servo to move the lens in and out of the optical axis. A button or serial command can be issued to manipulate the servo.\n\n\nA excitation component can be incorporated  to reduce contribution from bulk excitation. An annulus with a lens pair combination can be added to generate TIRF illumination, eliminating epifluoresence excitation.  \n  \n  \nThe SAF images can be analyzed with the python class to acquire radial and circumferential profiles of the SAF images.  \n  \n  \n## Component List:  \nMG996R Servo motor  \nAC254-200-A-ML\n\n\n## Fabricated components:\nServo_holder\nCircuit\n\n\n## Suggested Reads:\nM. Oheim, A. Salomon, M. Brunstein., **Supercritical Angle Fluorescence Microscopy and Spectroscopy**, [doi:10.1016/j.bpj.2020.03.029](https://www.sciencedirect.com/science/article/pii/S0006349520303003)\n\n\n## TODO:\n* Add arduino code\n* Add python code\n* Add new schematic\n* Add stl for servo holder\n* Add schematic for servo circuit.\n",
+        "description": "Supercritical Angle Fluorescence (SAF) imaging is a multipurpose technique that can be used to detect fluoresence emissions close to the cover glass...",
+        "images": [
+          "https://raw.githubusercontent.com/YipLab/IX83-Modules/master/SAF/images/schematic.png"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "plate_scanner",
+    "title": "\"Worm Scanner\" High-througput Line Scan Reader",
+    "slug": "worm-scanner-high-througput-line-scan-reader",
+    "repoUrl": "https://github.com/YipLab/plate_scanner",
+    "repoName": "plate_scanner",
+    "readme": "# plate_scanner\nAn automated multi-wellplate imaging system for high content, high resolution brightfield imaging. The current system acquires a 96 wellplate in less than 3 minutes at an effective pixel size of 2.7 um/px and acquires a well of a 96 wellplate in 4096 x 4096 pixels.  \n## Working principle\nOur system employs a line scan camera and requires the system to be continuously running as the camera is acquiring,  just like a scanner. This means that we acquire a entire row of the 96 wellplate in a single run and individual wells can be split up using post-processing. Below is a comparison between a smaller area sensor versus a line sensor:\n\nSince our system needs to be continuosly moving, a traditional setup where moving the wellplate will induce vibrational artifacts in the image. We opted to put the optics on an xy stage to move the optics as the line scan camera is acquring. As it is a brightfield system, the optical configuration of the system is pretty simple:  \n\n![System Schematic](https://raw.githubusercontent.com/YipLab/plate_scanner/master/images/schematic.png)\n\nTODO:  \nADD FIGURE  \n\n## Prototype 1\nThe first system was purpose built for C. elegans phenotypic studies, specifically used for a small molecule screen to identify potential molecules that inhibit their egg laying behaviour.  \n\n![Prototype 1](https://raw.githubusercontent.com/YipLab/plate_scanner/master/images/prototype1.png)\n\n## Prototype 2\nThe second device is a more refined prototype with a smaller footprint. This allowed the device to be transported the device to its new home in the Thibault Lab at the Nanyang Technical University in November 2017.  \n\n![Prototype 2](https://raw.githubusercontent.com/YipLab/plate_scanner/master/images/prototype2.png)\n\n\nFiles for Plate Reader\n\nTODO:\nSerial command documentation for motor\nGUI documentation\n",
+    "description": "An automated multi-wellplate imaging system for high content, high resolution brightfield imaging. The current system acquires a 96 wellplate in less...",
+    "previewImage": "https://raw.githubusercontent.com/YipLab/plate_scanner/master/images/schematic.png",
+    "images": [
+      "https://raw.githubusercontent.com/YipLab/plate_scanner/master/images/schematic.png",
+      "https://raw.githubusercontent.com/YipLab/plate_scanner/master/images/prototype1.png",
+      "https://raw.githubusercontent.com/YipLab/plate_scanner/master/images/prototype2.png"
+    ],
+    "submodules": []
+  },
+  {
+    "id": "SPIM1",
+    "title": "SPIM1 modularized lightsheet microscope for large tissue imaging",
+    "slug": "spim1-modularized-lightsheet-microscope-for-large-tissue-imaging",
+    "repoUrl": "https://github.com/YipLab/SPIM1",
+    "repoName": "SPIM1",
+    "readme": "# SPIM1\n\nModular lightsheet microscope that enables the swapping of excitation optics, imaging medium and imaging objectives. The imaging arm on the system is setup vertically to make use of dipping objectives. \n\n![System Schematic](https://raw.githubusercontent.com/YipLab/SPIM1/main/images/schematic.png)\n\n## Components\n\n### Lasers  \n405 Laser | Coherent Cube 408 nm 50 mW  \n488 Laser | Coherent Sapphire 488 nm 20 mW  \n532 Laser | Laser Quantum GEM 532 nm 400 mW  \n640 Laser | Laser Quantum IGNIS 660 nm 400 mW\n\n### Optics\nL1, L3 | Achromatic Doublet f = 30 mm ([AC254-030-A-ML](https://www.thorlabs.com/thorproduct.cfm?partnumber=AC254-030-A-ML))  \nL2 | Achromatic Doublet f = 60 mm ([AC254-060-A-ML](https://www.thorlabs.com/thorproduct.cfm?partnumber=AC254-060-A-ML))    \nL4 | Achromatic Doublet f = 100 mm ([AC254-100-A-ML](https://www.thorlabs.com/thorproduct.cfm?partnumber=AC254-100-A-ML))   \nL5 | Achromatic Doublet f = 150 mm ([AC254-150-A-ML](https://www.thorlabs.com/thorproduct.cfm?partnumber=AC254-150-A-ML))  \n  \nCL1 | Plano-Convex Cylindrical Lens f = 40 mm ([LJ1402L1-A](https://www.thorlabs.com/thorproduct.cfm?partnumber=LJ1402L1-A))  \n  \nObj1 | Olympus SLMPlan 20x/0.35  \nObj2 | Olympus SLMPlan 20x/0.35\n\nDM1 | 570 nm LP Dichroic  \nDM2 | 500 nm LP Dichroic  \nDM3 | 455 nm LP Dichroic  \n  \nFW1 | 454 nm - 44 nm BP filter    \nFW2 | 539 nm - 60 nm BP filter  \nFW3 | 553 nm - 44 nm BP filter   \nFW4 | 681 LP filter  \n\n### Camera\nCAM | Andor NEO 5.5 sCMOS  \n\n### Software\nMicromanager 2.0-gamma\n\n## TODO  \n* folder for CAD\n* folder for software\n",
+    "description": "Modular lightsheet microscope that enables the swapping of excitation optics, imaging medium and imaging objectives. The imaging arm on the system is...",
+    "previewImage": "https://raw.githubusercontent.com/YipLab/SPIM1/main/images/schematic.png",
+    "images": ["https://raw.githubusercontent.com/YipLab/SPIM1/main/images/schematic.png"],
+    "submodules": []
+  },
+  {
+    "id": "SPIM2",
+    "title": "SPIM2 multiview OpenSPIM light sheeet for developmental imaging",
+    "slug": "spim2-multiview-openspim-light-sheeet-for-developmental-imaging",
+    "repoUrl": "https://github.com/YipLab/SPIM2",
+    "repoName": "SPIM2",
+    "readme": "# SPIM2\n\nA dual sided lightsheet based on [open SPIM](https://openspim.org/) design.  \n\n![System Schematic](https://raw.githubusercontent.com/YipLab/SPIM2/master/Images/Schematic.png)\n\n## Components\n\n### Lasers  \n403 Laser | Coherent Cube 403 nm 100 mW  \n488 Laser | Coherent Sapphire 488 nm 75 mW  \n532 Laser | Ultralasers 532 nm 400 mW  \n640 Laser | Coherent Cube 640 nm 40 mW\n\n### Optics\nL1, L4, L5, L8 | Achromatic Doublet f = 25 mm ([AC127-025-A-ML](https://www.thorlabs.com/thorproduct.cfm?partnumber=AC127-025-A-ML))  \nL2, L3, L6, L7 | Achromatic Doublet f = 50 mm ([AC127-050-A-ML](https://www.thorlabs.com/thorproduct.cfm?partnumber=AC127-050-A-ML))  \n\nCL1, 2 | Plano-Convex Cylindrical Lens f = 75 mm ([LJ1703RM-A](https://www.thorlabs.com/thorproduct.cfm?partnumber=LJ1703RM-A))\n\nObj1,2 | Olympus UPlanFL N 10x/0.30    \nObj3 | Olympus UMPlanFL N 20x/0.40    \n\nDM1 |  \nDM2 |   \nDM3 | 427 nm LP Dichroic  \n\nFW1 | 438-520 nm; 570-645 nm BP filter  \nFW2 | 522-580 nm; 665-693 nm BP filter  \nFW3 | 518 nm-32 nm BP filter  \nFW4 | 165 nm-45 nm BP filter  \n\n### Camera\nCAM | [IRIS 15](https://www.photometrics.com/products/iris-family/iris15) Photometrics SCMOS   \n\n### Software\nMicromanager 2.0-gamma\n\n## TODO \n* folder for CAD\n* folder for software\n",
+    "description": "A dual sided lightsheet based on open SPIM design.",
+    "previewImage": "https://raw.githubusercontent.com/YipLab/SPIM2/master/Images/Schematic.png",
+    "images": ["https://raw.githubusercontent.com/YipLab/SPIM2/master/Images/Schematic.png"],
+    "submodules": []
+  },
+  {
+    "id": "SPIM3",
+    "title": "SPIM3 Inverted iSPIM based on a FV300 Confocal Scanner",
+    "slug": "spim3-inverted-ispim-based-on-a-fv300-confocal-scanner",
+    "repoUrl": "https://github.com/YipLab/SPIM3",
+    "repoName": "SPIM3",
+    "readme": "# SPIM3\n\nInverted lighsheet microscope built ontop of a confocal microscope base. Converting the confocal illumination into a lightsheet configuration, taking advantage of existing laser lines and scanning systems. System was designed to slide into an IX71 microscope base.\n\n\n![System Schematic](https://raw.githubusercontent.com/YipLab/SPIM3/main/images/schematic.png)\n\n\nExcitation from the confocal microscope is redirected to a 45 degree angle towards the excitation objective. During acqusition, the confocal draws a continuous line to generate a digital scanning light sheet. The fluoresence image is then acquired by a second objective orthagonal to the scanned light sheet and the image is projected onto the camera. \n\n## Components\n\n### Microscope\nIX71 Microscope Base  \nFV300\n\n### Optics\nTL | Achromatic Doublet f = 150 mm ([AC254-150-A-ML](https://www.thorlabs.com/thorproduct.cfm?partnumber=AC254-150-A-ML))\n\n### Objectives\nObj1 | Olympus UMPLFLN10XW  \nObj2 | Olympus UMPLFLN20XW\n\n## Filters\nF1 | Close  \nF2 | BP650-700  \nF3 | BP560-620  \nF4 | BP545-580  \nF5 | Open  \n\n### Camera\nCam | Photometrics Prime sCMOS\n\n## TODO\n- Folder for CAD\n- FOlder for software\n",
+    "description": "Inverted lighsheet microscope built ontop of a confocal microscope base. Converting the confocal illumination into a lightsheet configuration, taking...",
+    "previewImage": "https://raw.githubusercontent.com/YipLab/SPIM3/main/images/schematic.png",
+    "images": ["https://raw.githubusercontent.com/YipLab/SPIM3/main/images/schematic.png"],
+    "submodules": []
+  }
+]

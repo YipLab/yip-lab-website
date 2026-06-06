@@ -12,7 +12,10 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+    "react-dom": "^19.2.3",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.17.0",
+    "rehype-raw": "^7.0.0"
   },
   "scripts": {
     "dev": "vite",
@@ -22,6 +25,7 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
+    "pull-repos": "node scripts/pull_repos.mjs",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
