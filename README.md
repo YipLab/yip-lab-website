@@ -15,13 +15,14 @@ This website showcases the research systems and projects developed by Yip Lab, f
 
 - React 19 with TypeScript
 - Material-UI (MUI) v7
+- Vite (build tool)
 - GitHub Pages for hosting
 
 ## Development
 
 ### Prerequisites
 
-- Node.js (v16 or higher)
+- Node.js (v18 or higher)
 - npm
 
 ### Getting Started
@@ -42,21 +43,33 @@ npm install
 npm start
 ```
 
-The app will open at [http://localhost:3000/yip-lab-website](http://localhost:3000/yip-lab-website)
+The app will open at [http://localhost:5173/yip-lab-website](http://localhost:5173/yip-lab-website)
 
 ### Available Scripts
 
-#### `npm start`
+#### `npm start` / `npm run dev`
 
-Runs the app in development mode. The page will reload when you make changes.
-
-#### `npm test`
-
-Launches the test runner in interactive watch mode.
+Runs the app in development mode with HMR. The page will reload when you make changes.
 
 #### `npm run build`
 
-Builds the app for production to the `build` folder.
+Type-checks and builds the app for production to the `build` folder.
+
+#### `npm run format`
+
+Formats source files with Prettier.
+
+#### `npm run lint`
+
+Runs ESLint to check for code quality issues.
+
+#### `npm run lint:fix`
+
+Runs ESLint and automatically fixes fixable issues.
+
+#### `npm run preview`
+
+Serves the production build locally for preview.
 
 #### `npm run deploy`
 

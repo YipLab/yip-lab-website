@@ -105,15 +105,15 @@ function App() {
               About
             </Typography>
             <Typography variant="body1" paragraph>
-              The Yip Lab is dedicated to advancing the field of microscopy and imaging systems.
-              Our research focuses on developing innovative optical systems and computational methods
+              The Yip Lab is dedicated to advancing the field of microscopy and imaging systems. Our
+              research focuses on developing innovative optical systems and computational methods
               for biological and medical imaging applications.
             </Typography>
             <Typography variant="body1">
               We work on various cutting-edge technologies including Digital Holographic Microscopy,
-              Selective Plane Illumination Microscopy (SPIM), and automated imaging systems.
-              Our interdisciplinary approach combines optics, engineering, and computational biology
-              to push the boundaries of what's possible in microscopy.
+              Selective Plane Illumination Microscopy (SPIM), and automated imaging systems. Our
+              interdisciplinary approach combines optics, engineering, and computational biology to
+              push the boundaries of what's possible in microscopy.
             </Typography>
           </Paper>
 
@@ -177,9 +177,7 @@ function App() {
             px: 2,
             mt: 'auto',
             backgroundColor: (theme) =>
-              theme.palette.mode === 'light'
-                ? theme.palette.grey[200]
-                : theme.palette.grey[800],
+              theme.palette.mode === 'light' ? theme.palette.grey[200] : theme.palette.grey[800],
           }}
         >
           <Container maxWidth="lg">
