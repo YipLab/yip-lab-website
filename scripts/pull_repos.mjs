@@ -122,16 +122,39 @@ function extractDescription(mdContent) {
 }
 
 /**
- * Strip leading slash but leave the rest of the path relative to repo root.
- *   /images/foo.png       → images/foo.png
- *   DMD/images/foo.png    → DMD/images/foo.png
- *   ./images/foo.png      → images/foo.png
+ * Resolve a relative image path against the README's directory.
+ *   README at:      ""  (repo root)
+ *     /images/foo.png  → images/foo.png
+ *     images/foo.png   → images/foo.png
+ *   README at:      "Software/"  (submodule dir)
+ *     ../images/foo.png  → images/foo.png   (up one level from Software/)
+ *     images/foo.png     → Software/images/foo.png
+ *     /images/foo.png    → images/foo.png   (absolute from repo root)
  */
-function stripLeadingSlash(p) {
-  let s = p.trim();
-  if (s.startsWith('./')) s = s.slice(2);
-  if (s.startsWith('/')) s = s.slice(1);
-  return s;
+function resolveRelPath(rawPath, readmeDir) {
+  let p = rawPath.trim();
+
+  // Absolute from repo root
+  if (p.startsWith('/')) {
+    return p.slice(1);
+  }
+
+  // Resolve relative to the README's directory, then simplify ./..
+  const segments = [];
+  // Start from the README directory
+  if (readmeDir) {
+    segments.push(...readmeDir.replace(/\/$/, '').split('/'));
+  }
+
+  for (const seg of p.split('/')) {
+    if (seg === '..') {
+      segments.pop();
+    } else if (seg !== '.' && seg !== '') {
+      segments.push(seg);
+    }
+  }
+
+  return segments.join('/');
 }
 
 /**
@@ -146,10 +169,11 @@ function rawUrl(owner, repoName, branch, relPath) {
 
 /**
  * Find all local image references in markdown/HTML.
- * Returns [{ fullMatch: "![...](...)" | "<img ...>", url: "images/foo.png" }]
- * The url is the raw path from the tag (no leading /).
+ * readmeDir = the directory containing the README, relative to repo root
+ *   ("" for toplevel, "Software/" for a submodule).
+ * Returns [{ fullMatch: "![...](...)" | "<img ...>", url: resolvedRelativePath }]
  */
-function extractImageRefs(mdContent) {
+function extractImageRefs(mdContent, readmeDir) {
   const refs = [];
   const seen = new Set();
 
@@ -160,7 +184,7 @@ function extractImageRefs(mdContent) {
     const url = match[1].trim();
     if (url && !url.startsWith('http') && !seen.has(url)) {
       seen.add(url);
-      refs.push({ fullMatch: match[0], url: stripLeadingSlash(url) });
+      refs.push({ fullMatch: match[0], url: resolveRelPath(url, readmeDir) });
     }
   }
 
@@ -170,7 +194,7 @@ function extractImageRefs(mdContent) {
     const url = match[1].trim();
     if (url && !url.startsWith('http') && !seen.has(url)) {
       seen.add(url);
-      refs.push({ fullMatch: match[0], url: stripLeadingSlash(url) });
+      refs.push({ fullMatch: match[0], url: resolveRelPath(url, readmeDir) });
     }
   }
 
@@ -179,10 +203,12 @@ function extractImageRefs(mdContent) {
 
 /**
  * Process a README: rewrite all local image URLs → raw.githubusercontent.com.
+ * readmeDir = directory containing this README relative to repo root
+ *   ("" for toplevel, "Software/" for submodules).
  * Returns { readme, description, previewImage, images[] }
  */
-function processReadme(readmeRaw, owner, repoName, branch) {
-  const imageRefs = extractImageRefs(readmeRaw);
+function processReadme(readmeRaw, owner, repoName, branch, readmeDir) {
+  const imageRefs = extractImageRefs(readmeRaw, readmeDir);
   let rewritten = readmeRaw;
   const images = [];
 
@@ -228,7 +254,7 @@ function discoverSubmodules(repoDir, owner, repoName, branch) {
     if (!existsSync(readmePath)) continue;
 
     const readmeRaw = readFileSync(readmePath, 'utf-8');
-    const processed = processReadme(readmeRaw, owner, repoName, branch);
+    const processed = processReadme(readmeRaw, owner, repoName, branch, entry.name + '/');
 
     submodules.push({
       name: entry.name,
@@ -274,7 +300,7 @@ async function main() {
 
     if (existsSync(readmePath)) {
       const readmeRaw = readFileSync(readmePath, 'utf-8');
-      const processed = processReadme(readmeRaw, repo.owner, repo.repoName, branch);
+      const processed = processReadme(readmeRaw, repo.owner, repo.repoName, branch, '');
       readme = processed.readme;
       description = processed.description;
       previewImage = processed.previewImage;
