@@ -1,12 +1,635 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/playfair-display/500.css';
+@import '@fontsource/playfair-display/600.css';
+@import '@fontsource/playfair-display/700.css';
+
 body {
   margin: 0;
-  font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
-    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.hero-ray-trace {
+  color: #d7d7d4;
+}
+
+.hero-ray-trace svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.hero-ray-frame {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.hero-ray-stage-line,
+.hero-ray-outline,
+.hero-ray-tip-fold,
+.hero-ray-mirror-face,
+.hero-ray-beam,
+.hero-ray-wave path,
+.hero-ray-source-halo {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hero-ray-stage-line {
+  stroke-width: 8;
+  opacity: 0.48;
+}
+
+.hero-ray-outline {
+  stroke-width: 2;
+  opacity: 0.76;
+}
+
+.hero-ray-tip-fold {
+  stroke-width: 1;
+  opacity: 0;
+}
+
+.hero-ray-laser-spot {
+  fill: #e54848;
+  opacity: 0;
+}
+
+.hero-ray-cantilever {
+  transform-box: view-box;
+  transform-origin: 552px 316px;
+  animation: heroCantileverTap 10s cubic-bezier(0.68, 0, 0.32, 1) infinite;
+}
+
+.hero-ray-mirror {
+  opacity: 0;
+  transform: translateY(-8px);
+  animation: heroMirror 10s linear infinite;
+}
+
+.hero-ray-mirror-face {
+  stroke-width: 7;
+  opacity: 0.9;
+}
+
+.hero-ray-source-core {
+  fill: #e54848;
+  filter: url('#heroRaySoftGlow');
+  opacity: 0;
+  animation: heroSourceCore 10s linear infinite;
+}
+
+.hero-ray-source-halo {
+  stroke-width: 2.6;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.hero-ray-source-halo-a {
+  animation: heroSourceHaloA 10s linear infinite;
+}
+
+.hero-ray-source-halo-b {
+  animation: heroSourceHaloB 10s linear infinite;
+}
+
+.hero-ray-source-halo-c {
+  animation: heroSourceHaloC 10s linear infinite;
+}
+
+.hero-ray-beam,
+.hero-ray-beam-pump,
+.hero-ray-beam-underlay,
+.hero-ray-beam-eraser {
+  stroke-width: 1.7;
+  filter: url('#heroRaySoftGlow');
+  opacity: 0;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation-fill-mode: both;
+  stroke: #e54848;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hero-ray-beam-underlay {
+  stroke-width: 5.2;
+}
+
+.hero-ray-beam-pump {
+  animation: heroBeamPump 10s linear infinite;
+  stroke-width: 3;
+  stroke-dasharray: 180;
+  stroke-dashoffset: 180;
+}
+
+.hero-ray-beam-pump-underlay {
+  fill: none;
+  stroke: #e54848;
+  stroke-linecap: round;
+  stroke-width: 7;
+  opacity: 0;
+  filter: url('#heroRaySoftGlow');
+  stroke-dasharray: 180;
+  stroke-dashoffset: 180;
+  animation: heroBeamPumpUnderlay 10s linear infinite;
+}
+
+.hero-ray-beam-eraser {
+  filter: url('#heroRayEraseCover');
+  stroke: var(--hero-ray-bg);
+  stroke-width: 9.5;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.hero-ray-beam-pump-eraser {
+  stroke-width: 13;
+  stroke-dasharray: 180;
+  stroke-dashoffset: 180;
+  animation-name: heroBeamPumpErase;
+}
+
+.hero-ray-beam-incident-eraser {
+  animation-name: heroIncidentBeamErase;
+}
+
+.hero-ray-beam-reflected-eraser {
+  animation-name: heroReflectedBeamErase;
+}
+
+.hero-ray-beam-incident {
+  stroke-width: 1.55;
+}
+
+.hero-ray-beam-reflected {
+  stroke-width: 1.7;
+}
+
+.hero-ray-beam-incident-underlay {
+  animation: heroIncidentBeamUnderlay 10s linear infinite;
+}
+
+.hero-ray-beam-reflected-underlay {
+  animation: heroReflectedBeamUnderlay 10s linear infinite;
+}
+
+.hero-ray-beam-incident {
+  animation: heroIncidentBeamTravel 10s linear infinite;
+}
+
+.hero-ray-beam-reflected {
+  animation: heroReflectedBeamTravel 10s linear infinite;
+}
+
+.hero-ray-laser-spot {
+  animation: heroLaserSpotAfterIncident 10s linear infinite;
+}
+
+.hero-ray-wave {
+  opacity: 0;
+  stroke-dasharray: 12 18;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.hero-ray-wave path {
+  stroke-width: 1.15;
+  opacity: 0.86;
+}
+
+.hero-ray-wave path + path {
+  opacity: 0.52;
+}
+
+.hero-ray-wave-phase-a {
+  animation: heroWavePhaseA 1.8s ease-in-out infinite;
+}
+
+.hero-ray-wave-phase-b {
+  opacity: 0;
+  animation: heroWavePhaseB 1.8s ease-in-out infinite;
+}
+
+.hero-ray-wave-travel {
+  animation-name: heroWaveTravel;
+}
+
+@keyframes heroSourceCore {
+  0%,
+  19.9%,
+  79.5%,
+  100% {
+    opacity: 0;
+  }
+  20%,
+  76% {
+    opacity: 0.96;
+  }
+}
+
+@keyframes heroSourceHaloA {
+  0%,
+  19.9%,
+  79.5%,
+  100% {
+    opacity: 0;
+    transform: scale(0.65);
+  }
+  20% {
+    opacity: 0;
+    transform: scale(0.65);
+  }
+  36% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  54% {
+    opacity: 0.24;
+    transform: scale(1.18);
+  }
+  76% {
+    opacity: 0;
+    transform: scale(1.42);
+  }
+}
+
+@keyframes heroSourceHaloB {
+  0%,
+  27.9%,
+  79.5%,
+  100% {
+    opacity: 0;
+    transform: scale(0.65);
+  }
+  28% {
+    opacity: 0;
+    transform: scale(0.65);
+  }
+  46% {
+    opacity: 0.42;
+    transform: scale(1);
+  }
+  62% {
+    opacity: 0.2;
+    transform: scale(1.18);
+  }
+  76% {
+    opacity: 0;
+    transform: scale(1.42);
+  }
+}
+
+@keyframes heroSourceHaloC {
+  0%,
+  35.9%,
+  79.5%,
+  100% {
+    opacity: 0;
+    transform: scale(0.65);
+  }
+  36% {
+    opacity: 0;
+    transform: scale(0.65);
+  }
+  54% {
+    opacity: 0.34;
+    transform: scale(1);
+  }
+  68% {
+    opacity: 0.16;
+    transform: scale(1.18);
+  }
+  76% {
+    opacity: 0;
+    transform: scale(1.42);
+  }
+}
+
+@keyframes heroMirror {
+  0%,
+  18%,
+  88%,
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  22%,
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroCantileverTap {
+  0%,
+  57%,
+  66%,
+  100% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(-4deg);
+  }
+  63% {
+    transform: rotate(1.2deg);
+  }
+}
+
+@keyframes heroBeamPump {
+  0%,
+  20% {
+    opacity: 0;
+    stroke-dashoffset: 180;
+  }
+  22% {
+    opacity: 0.96;
+    stroke-dashoffset: 180;
+  }
+  30%,
+  90% {
+    opacity: 0.96;
+    stroke-dashoffset: 0;
+  }
+  90.1%,
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes heroBeamPumpUnderlay {
+  0%,
+  21.9% {
+    opacity: 0;
+    stroke-dashoffset: 180;
+  }
+  30%,
+  90% {
+    opacity: 0.24;
+    stroke-dashoffset: 0;
+  }
+  90.1%,
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes heroIncidentBeamTravel {
+  0%,
+  30% {
+    opacity: 0;
+    stroke-dashoffset: 1;
+  }
+  31% {
+    opacity: 0.86;
+    stroke-dashoffset: 1;
+  }
+  42%,
+  90% {
+    opacity: 0.86;
+    stroke-dashoffset: 0;
+  }
+  90.1%,
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes heroIncidentBeamUnderlay {
+  0%,
+  30% {
+    opacity: 0;
+    stroke-dashoffset: 1;
+  }
+  31% {
+    opacity: 0.2;
+    stroke-dashoffset: 1;
+  }
+  42%,
+  90% {
+    opacity: 0.2;
+    stroke-dashoffset: 0;
+  }
+  90.1%,
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes heroLaserSpotAfterIncident {
+  0%,
+  41.9%,
+  86.1%,
+  100% {
+    opacity: 0;
+  }
+  42%,
+  86% {
+    opacity: 0.92;
+  }
+}
+
+@keyframes heroReflectedBeamTravel {
+  0%,
+  42% {
+    opacity: 0;
+    stroke-dashoffset: 1;
+  }
+  43% {
+    opacity: 0.86;
+    stroke-dashoffset: 1;
+  }
+  52%,
+  90% {
+    opacity: 0.86;
+    stroke-dashoffset: 0;
+  }
+  90.1%,
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes heroReflectedBeamUnderlay {
+  0%,
+  42% {
+    opacity: 0;
+    stroke-dashoffset: 1;
+  }
+  43% {
+    opacity: 0.22;
+    stroke-dashoffset: 1;
+  }
+  52%,
+  90% {
+    opacity: 0.22;
+    stroke-dashoffset: 0;
+  }
+  90.1%,
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes heroBeamPumpErase {
+  0%,
+  77.9% {
+    opacity: 0;
+    stroke-dashoffset: 180;
+  }
+  78% {
+    opacity: 1;
+    stroke-dashoffset: 180;
+  }
+  82% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+  96% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+  96.1%,
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes heroIncidentBeamErase {
+  0%,
+  81.9% {
+    opacity: 0;
+    stroke-dashoffset: 1;
+  }
+  82% {
+    opacity: 1;
+    stroke-dashoffset: 1;
+  }
+  86% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+  96% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+  96.1%,
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes heroReflectedBeamErase {
+  0%,
+  85.9% {
+    opacity: 0;
+    stroke-dashoffset: 1;
+  }
+  86% {
+    opacity: 1;
+    stroke-dashoffset: 1;
+  }
+  90% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+  96% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+  96.1%,
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes heroWavePhaseA {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes heroWavePhaseB {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes heroWaveTravel {
+  0%,
+  19%,
+  100% {
+    opacity: 0;
+  }
+  25%,
+  76% {
+    opacity: 0.8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-ray-trace *,
+  .hero-ray-trace *::before,
+  .hero-ray-trace *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .hero-ray-source-core {
+    opacity: 0.92;
+    transform: scale(1);
+  }
+
+  .hero-ray-source-halo {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  .hero-ray-mirror {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-ray-beam-pump,
+  .hero-ray-beam-incident,
+  .hero-ray-beam-reflected,
+  .hero-ray-wave-travel {
+    opacity: 0.78;
+    stroke-dashoffset: 0;
+  }
 }

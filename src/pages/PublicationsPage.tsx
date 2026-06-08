@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Box, Paper, Link, Chip, Button } from '@mui/material';
+import { Container, Typography, Box, Card, CardContent, Link, Chip, Button } from '@mui/material';
 import { OpenInNew as OpenInNewIcon, School as ScholarIcon } from '@mui/icons-material';
 import pubData from '../data/publications.json';
 
@@ -16,7 +16,7 @@ function PublicationsPage() {
     pubData;
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+    <Container maxWidth="lg" sx={{ mt: 4, mb: 8 }}>
       <Box sx={{ textAlign: 'center', mb: 6 }}>
         <Typography variant="h2" component="h1" gutterBottom>
           Publications
@@ -26,7 +26,7 @@ function PublicationsPage() {
         </Typography>
       </Box>
 
-      <Paper elevation={3} sx={{ p: 4, mb: 4 }}>
+      <Card sx={{ p: 4, mb: 4, borderLeft: '4px solid', borderColor: 'primary.main' }}>
         <Typography variant="h4" component="h2" gutterBottom>
           About Our Research
         </Typography>
@@ -84,60 +84,65 @@ function PublicationsPage() {
             </Button>
           )}
         </Box>
-      </Paper>
+      </Card>
 
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         {publications.map((pub, index) => (
-          <Paper
+          <Card
             key={index}
-            elevation={1}
             sx={{
-              p: 3,
-              transition: 'box-shadow 0.2s, border-color 0.2s',
+              overflow: 'hidden',
               borderLeft: 4,
               borderColor: `${typeColors[pub.type] || 'warning'}.main`,
+              transition: 'box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
               '&:hover': { boxShadow: 4 },
             }}
           >
-            <Box
-              sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}
-            >
-              <Box sx={{ flex: 1 }}>
-                <Typography variant="h6" component="h3" gutterBottom>
-                  {pub.title}
-                </Typography>
-                {pub.authors && (
-                  <Typography variant="body2" color="text.secondary" sx={{ mb: 0.5, fontStyle: 'italic' }}>
-                    {pub.authors}
+            <CardContent>
+              <Box
+                sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}
+              >
+                <Box sx={{ flex: 1 }}>
+                  <Typography variant="h6" gutterBottom>
+                    {pub.title}
                   </Typography>
-                )}
-                {pub.journal && (
-                  <Typography variant="body2" color="text.secondary" gutterBottom>
-                    {pub.journal}
-                  </Typography>
+                  {pub.authors && (
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      sx={{ mb: 0.5, fontStyle: 'italic' }}
+                    >
+                      {pub.authors}
+                    </Typography>
+                  )}
+                  {pub.journal && (
+                    <Typography variant="body2" color="text.secondary" gutterBottom>
+                      {pub.journal}
+                    </Typography>
+                  )}
+                </Box>
+                {pub.year && (
+                  <Chip
+                    label={pub.year}
+                    size="small"
+                    color={typeColors[pub.type] || 'default'}
+                    variant="outlined"
+                    sx={{ ml: 2, flexShrink: 0 }}
+                  />
                 )}
               </Box>
-              {pub.year && (
-                <Chip
-                  label={pub.year}
-                  size="small"
-                  color={typeColors[pub.type] || 'default'}
-                  variant="outlined"
-                  sx={{ ml: 2, flexShrink: 0 }}
-                />
+              {pub.doiUrl && (
+                <Link
+                  href={pub.doiUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ fontSize: '0.8rem', display: 'inline-flex', alignItems: 'center', mt: 1 }}
+                >
+                  {pub.doiUrl} <OpenInNewIcon sx={{ fontSize: 14, ml: 0.5 }} />
+                </Link>
               )}
-            </Box>
-            {pub.doiUrl && (
-              <Link
-                href={pub.doiUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ fontSize: '0.8rem', display: 'inline-flex', alignItems: 'center', mt: 1 }}
-              >
-                {pub.doiUrl} <OpenInNewIcon sx={{ fontSize: 14, ml: 0.5 }} />
-              </Link>
-            )}
-          </Paper>
+            </CardContent>
+          </Card>
         ))}
       </Box>
 

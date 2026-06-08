@@ -1,49 +1,11 @@
 import React from 'react';
-import { Container, Typography, Box, Paper, Chip } from '@mui/material';
+import { Container, Typography, Box, Card, CardContent, Chip } from '@mui/material';
 import { Work as WorkIcon } from '@mui/icons-material';
-
-const researchThemes = [
-  {
-    title: 'Single Molecule Biophysics',
-    description:
-      'Understanding the fundamental mechanisms associated with how molecules assemble to form supramolecular architectures, from small molecule systems through peptides to proteins.',
-    tags: ['AFM', 'Single Molecule', 'Biophysics'],
-  },
-  {
-    title: 'Membrane Protein Interactions',
-    description:
-      'Studying how proteins and peptides interact with cellular membranes, which has importance for understanding how toxins work and how signaling pathways are regulated.',
-    tags: ['Membranes', 'Proteins', 'Toxins'],
-  },
-  {
-    title: 'Digital Holographic Microscopy',
-    description:
-      'Developing portable telecentric digital holographic microscopes for label-free quantitative phase imaging of biological specimens.',
-    tags: ['DHM', 'Phase Imaging', 'Label-Free'],
-  },
-  {
-    title: 'Selective Plane Illumination Microscopy',
-    description:
-      'Designing and building SPIM systems including multiview OpenSPIM, inverted iSPIM, and single objective lightsheet microscopes for 3D live cell imaging.',
-    tags: ['SPIM', 'Light Sheet', '3D Imaging'],
-  },
-  {
-    title: 'Automated Imaging Systems',
-    description:
-      'Creating adaptive robotic microscopes and high-throughput line scan readers for automated, large-scale biological imaging applications.',
-    tags: ['Automation', 'Robotics', 'High-Throughput'],
-  },
-  {
-    title: 'Computational Imaging',
-    description:
-      'Applying computational techniques including machine learning and advanced image processing to enhance microscopy data acquisition and analysis.',
-    tags: ['Machine Learning', 'Image Processing', 'Data Analysis'],
-  },
-];
+import { researchThemes } from '../data/themes';
 
 function ProjectsPage() {
   return (
-    <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+    <Container maxWidth="lg" sx={{ mt: 4, mb: 8 }}>
       <Box sx={{ textAlign: 'center', mb: 6 }}>
         <Typography variant="h2" component="h1" gutterBottom>
           Research Projects
@@ -53,7 +15,7 @@ function ProjectsPage() {
         </Typography>
       </Box>
 
-      <Paper elevation={3} sx={{ p: 4, mb: 6 }}>
+      <Card sx={{ p: 4, mb: 6, borderLeft: '4px solid', borderColor: 'primary.main' }}>
         <Typography variant="h4" component="h2" gutterBottom>
           Research Overview
         </Typography>
@@ -68,7 +30,7 @@ function ProjectsPage() {
           imaging and characterization tools for studying phenomena at the single molecule scale,
           with computational techniques.
         </Typography>
-      </Paper>
+      </Card>
 
       <Box
         sx={{
@@ -81,22 +43,22 @@ function ProjectsPage() {
         }}
       >
         {researchThemes.map((theme) => (
-          <Paper key={theme.title} elevation={3} sx={{ p: 3 }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-              <WorkIcon color="primary" sx={{ mr: 1 }} />
-              <Typography variant="h6" component="h3">
-                {theme.title}
+          <Card key={theme.title} sx={{ overflow: 'hidden' }}>
+            <CardContent>
+              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                <WorkIcon color="primary" sx={{ mr: 1.5 }} />
+                <Typography variant="h6">{theme.title}</Typography>
+              </Box>
+              <Typography variant="body2" color="text.secondary" paragraph sx={{ lineHeight: 1.7 }}>
+                {theme.description}
               </Typography>
-            </Box>
-            <Typography variant="body2" color="text.secondary" paragraph>
-              {theme.description}
-            </Typography>
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-              {theme.tags.map((tag) => (
-                <Chip key={tag} label={tag} size="small" color="primary" variant="outlined" />
-              ))}
-            </Box>
-          </Paper>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                {theme.tags.map((tag) => (
+                  <Chip key={tag} label={tag} size="small" color="primary" variant="outlined" />
+                ))}
+              </Box>
+            </CardContent>
+          </Card>
         ))}
       </Box>
     </Container>

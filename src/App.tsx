@@ -4,7 +4,6 @@ import {
   Box,
   CssBaseline,
   ThemeProvider,
-  createTheme,
   AppBar,
   Toolbar,
   Typography,
@@ -17,6 +16,8 @@ import {
   ListItemIcon,
   ListItemText,
   Divider,
+  Link,
+  Grid,
 } from '@mui/material';
 import {
   Science as ScienceIcon,
@@ -26,42 +27,44 @@ import {
   Home as HomeIcon,
   People as PeopleIcon,
   Work as WorkIcon,
-  Biotech as SystemsIcon,
   Article as ArticleIcon,
   Mail as MailIcon,
+  GitHub as GitHubIcon,
+  School as ScholarIcon,
+  LinkedIn as LinkedInIcon,
 } from '@mui/icons-material';
+import { getLightTheme, getDarkTheme } from './theme';
 import HomePage from './pages/HomePage';
 import RepoPage from './pages/RepoPage';
 import PeoplePage from './pages/PeoplePage';
 import ProjectsPage from './pages/ProjectsPage';
 import PublicationsPage from './pages/PublicationsPage';
 import ContactPage from './pages/ContactPage';
+import NotFoundPage from './pages/NotFoundPage';
+import pubData from './data/publications.json';
 import './App.css';
 
 const navItems = [
   { label: 'Home', path: '/', icon: <HomeIcon /> },
   { label: 'People', path: '/people', icon: <PeopleIcon /> },
   { label: 'Projects', path: '/projects', icon: <WorkIcon /> },
-  { label: 'Systems', path: '/', icon: <SystemsIcon /> },
   { label: 'Publications', path: '/publications', icon: <ArticleIcon /> },
   { label: 'Contact', path: '/contact', icon: <MailIcon /> },
 ];
+
+const footerLinks = {
+  github: 'https://github.com/YipLab',
+  scholar: pubData.googleScholar || '',
+  researchGate: pubData.researchGate || '',
+  linkedIn: pubData.linkedIn || '',
+  uoftProfile: pubData.profileUrl || '',
+};
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  const theme = useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode: darkMode ? 'dark' : 'light',
-          primary: { main: '#1976d2' },
-          secondary: { main: '#dc004e' },
-        },
-      }),
-    [darkMode],
-  );
+  const theme = useMemo(() => (darkMode ? getDarkTheme() : getLightTheme()), [darkMode]);
 
   const toggleDarkMode = () => setDarkMode((prev) => !prev);
   const toggleDrawer = () => setDrawerOpen((prev) => !prev);
@@ -70,19 +73,52 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <HashRouter>
-        <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-          {/* Header */}
-          <AppBar position="static" elevation={2}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+          <AppBar
+            position="sticky"
+            elevation={0}
+            sx={{
+              bgcolor: 'background.paper',
+              color: 'text.primary',
+              borderBottom: '1px solid',
+              borderColor: 'divider',
+              backdropFilter: 'blur(8px)',
+            }}
+          >
             <Toolbar>
               <IconButton color="inherit" edge="start" onClick={toggleDrawer} sx={{ mr: 1 }}>
                 <MenuIcon />
               </IconButton>
-              <ScienceIcon sx={{ mr: 1 }} />
+
+              {/* Logo placeholder — replace with animated lab logo later */}
+              <Box
+                sx={{
+                  width: 40,
+                  height: 40,
+                  mr: 1.5,
+                  borderRadius: 2,
+                  bgcolor: 'primary.main',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                }}
+              >
+                <ScienceIcon sx={{ color: '#fff', fontSize: 22 }} />
+              </Box>
+
               <Typography
                 variant="h6"
                 component={RouterLink}
                 to="/"
-                sx={{ flexGrow: 1, color: 'inherit', textDecoration: 'none' }}
+                sx={{
+                  flexGrow: 1,
+                  color: 'inherit',
+                  textDecoration: 'none',
+                  fontFamily: '"Playfair Display", serif',
+                  fontWeight: 700,
+                  letterSpacing: '-0.01em',
+                }}
               >
                 Yip Lab
               </Typography>
@@ -92,7 +128,6 @@ function App() {
             </Toolbar>
           </AppBar>
 
-          {/* Hamburger Menu Drawer */}
           <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer}>
             <Box sx={{ width: 250 }} role="presentation">
               <Box
@@ -106,7 +141,9 @@ function App() {
                 }}
               >
                 <ScienceIcon />
-                <Typography variant="h6">Yip Lab</Typography>
+                <Typography variant="h6" fontFamily='"Playfair Display", serif' fontWeight={700}>
+                  Yip Lab
+                </Typography>
               </Box>
               <Divider />
               <List>
@@ -122,7 +159,6 @@ function App() {
             </Box>
           </Drawer>
 
-          {/* Routes */}
           <Box sx={{ flex: 1 }}>
             <Routes>
               <Route path="/" element={<HomePage />} />
@@ -131,25 +167,185 @@ function App() {
               <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/publications" element={<PublicationsPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Box>
 
-          {/* Footer */}
+          {/* Expanded Footer */}
           <Box
             component="footer"
             sx={{
-              py: 3,
-              px: 2,
               mt: 'auto',
-              backgroundColor: (t) =>
-                t.palette.mode === 'light' ? t.palette.grey[200] : t.palette.grey[800],
+              borderTop: '1px solid',
+              borderColor: 'divider',
+              bgcolor: 'background.paper',
             }}
           >
-            <Container maxWidth="lg">
-              <Typography variant="body2" color="text.secondary" align="center">
-                © {new Date().getFullYear()} Yip Lab. All rights reserved.
-              </Typography>
+            <Container maxWidth="lg" sx={{ py: 6 }}>
+              <Grid container spacing={4}>
+                <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+                  <Typography
+                    variant="h6"
+                    gutterBottom
+                    sx={{ fontFamily: '"Playfair Display", serif', fontWeight: 600 }}
+                  >
+                    Yip Lab
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                    Molecular Imaging & Biophysics
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    The Donnelly Centre
+                    <br />
+                    University of Toronto
+                    <br />
+                    160 College Street
+                    <br />
+                    Toronto, Ontario M5S 3E1
+                    <br />
+                    Canada
+                  </Typography>
+                </Grid>
+
+                <Grid size={{ xs: 12, sm: 6, md: 2 }}>
+                  <Typography variant="subtitle2" gutterBottom sx={{ fontWeight: 600, mb: 1.5 }}>
+                    Quick Links
+                  </Typography>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+                    {navItems.map((item) => (
+                      <Link
+                        key={item.label}
+                        component={RouterLink}
+                        to={item.path}
+                        color="text.secondary"
+                        underline="hover"
+                        sx={{ fontSize: '0.875rem' }}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </Box>
+                </Grid>
+
+                <Grid size={{ xs: 12, md: 3 }}>
+                  <Typography variant="subtitle2" gutterBottom sx={{ fontWeight: 600, mb: 1.5 }}>
+                    External Links
+                  </Typography>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+                    {footerLinks.scholar && (
+                      <Link
+                        href={footerLinks.scholar}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        color="text.secondary"
+                        underline="hover"
+                        sx={{
+                          fontSize: '0.875rem',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 0.5,
+                        }}
+                      >
+                        <ScholarIcon sx={{ fontSize: 18 }} />
+                        Google Scholar
+                      </Link>
+                    )}
+                    {footerLinks.github && (
+                      <Link
+                        href={footerLinks.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        color="text.secondary"
+                        underline="hover"
+                        sx={{
+                          fontSize: '0.875rem',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 0.5,
+                        }}
+                      >
+                        <GitHubIcon sx={{ fontSize: 18 }} />
+                        GitHub
+                      </Link>
+                    )}
+                    {footerLinks.researchGate && (
+                      <Link
+                        href={footerLinks.researchGate}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        color="text.secondary"
+                        underline="hover"
+                        sx={{ fontSize: '0.875rem' }}
+                      >
+                        ResearchGate
+                      </Link>
+                    )}
+                    {footerLinks.linkedIn && (
+                      <Link
+                        href={footerLinks.linkedIn}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        color="text.secondary"
+                        underline="hover"
+                        sx={{
+                          fontSize: '0.875rem',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 0.5,
+                        }}
+                      >
+                        <LinkedInIcon sx={{ fontSize: 18 }} />
+                        LinkedIn
+                      </Link>
+                    )}
+                    {footerLinks.uoftProfile && (
+                      <Link
+                        href={footerLinks.uoftProfile}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        color="text.secondary"
+                        underline="hover"
+                        sx={{ fontSize: '0.875rem' }}
+                      >
+                        U of T Profile
+                      </Link>
+                    )}
+                  </Box>
+                </Grid>
+
+                <Grid size={{ xs: 12, md: 3 }}>
+                  <Typography variant="subtitle2" gutterBottom sx={{ fontWeight: 600, mb: 1.5 }}>
+                    Affiliations
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.8 }}>
+                    Faculty of Applied Science & Engineering
+                    <br />
+                    Faculty of Medicine
+                    <br />
+                    Dept. of Chemical Engineering
+                    <br />
+                    Institute of Biomaterials & Biomedical Engineering
+                    <br />
+                    Dept. of Biochemistry
+                  </Typography>
+                </Grid>
+              </Grid>
             </Container>
+
+            <Box
+              sx={{
+                borderTop: '1px solid',
+                borderColor: 'divider',
+                py: 2,
+                textAlign: 'center',
+              }}
+            >
+              <Container maxWidth="lg">
+                <Typography variant="body2" color="text.secondary">
+                  © {new Date().getFullYear()} Yip Lab. All rights reserved.
+                </Typography>
+              </Container>
+            </Box>
           </Box>
         </Box>
       </HashRouter>
