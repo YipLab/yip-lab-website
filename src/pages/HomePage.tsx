@@ -632,15 +632,6 @@ function HomePage() {
                       <Typography variant="subtitle1" fontWeight={600} gutterBottom>
                         {pub.title}
                       </Typography>
-                      {pub.authors && (
-                        <Typography
-                          variant="body2"
-                          color="text.secondary"
-                          sx={{ fontStyle: 'italic', mb: 0.5 }}
-                        >
-                          {pub.authors}
-                        </Typography>
-                      )}
                       {pub.journal && (
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 1 }}>
                           <ArticleIcon sx={{ fontSize: 16, color: 'text.secondary' }} />

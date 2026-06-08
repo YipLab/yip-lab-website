@@ -106,15 +106,6 @@ function PublicationsPage() {
                   <Typography variant="h6" gutterBottom>
                     {pub.title}
                   </Typography>
-                  {pub.authors && (
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      sx={{ mb: 0.5, fontStyle: 'italic' }}
-                    >
-                      {pub.authors}
-                    </Typography>
-                  )}
                   {pub.journal && (
                     <Typography variant="body2" color="text.secondary" gutterBottom>
                       {pub.journal}
