@@ -27,6 +27,7 @@ import {
   Home as HomeIcon,
   People as PeopleIcon,
   Work as WorkIcon,
+  PrecisionManufacturing as InstrumentsIcon,
   Article as ArticleIcon,
   Mail as MailIcon,
   GitHub as GitHubIcon,
@@ -38,6 +39,7 @@ import HomePage from './pages/HomePage';
 import RepoPage from './pages/RepoPage';
 import PeoplePage from './pages/PeoplePage';
 import ProjectsPage from './pages/ProjectsPage';
+import InstrumentsPage from './pages/InstrumentsPage';
 import PublicationsPage from './pages/PublicationsPage';
 import ContactPage from './pages/ContactPage';
 import NotFoundPage from './pages/NotFoundPage';
@@ -48,6 +50,7 @@ const navItems = [
   { label: 'Home', path: '/', icon: <HomeIcon /> },
   { label: 'People', path: '/people', icon: <PeopleIcon /> },
   { label: 'Projects', path: '/projects', icon: <WorkIcon /> },
+  { label: 'Instruments', path: '/instruments', icon: <InstrumentsIcon /> },
   { label: 'Publications', path: '/publications', icon: <ArticleIcon /> },
   { label: 'Contact', path: '/contact', icon: <MailIcon /> },
 ];
@@ -165,6 +168,7 @@ function App() {
               <Route path="/repo/:slug" element={<RepoPage />} />
               <Route path="/people" element={<PeoplePage />} />
               <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/instruments" element={<InstrumentsPage />} />
               <Route path="/publications" element={<PublicationsPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="*" element={<NotFoundPage />} />
